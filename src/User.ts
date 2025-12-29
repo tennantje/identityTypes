@@ -23,3 +23,17 @@ export type UpdateUserResponse = User;
 export type UpdateUserEmailRequest = Pick<User, "unverifiedEmail">;
 export type UpdateUserEmailResponse = User;
 export type GetUserResponse = User;
+
+export type ActivateUserRequest = {
+  email: string;
+  verificationCode: string;
+};
+
+export type ActivateUserResponse = User;
+
+export type VerifyEmailChangeRequest = {
+  email: string;
+  verificationCode: string;
+};
+
+export type VerifyEmailChangeResponse = User;
