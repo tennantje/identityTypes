@@ -37,3 +37,9 @@ export type VerifyEmailChangeRequest = {
 };
 
 export type VerifyEmailChangeResponse = User;
+
+export type GetLoginMethodsRequest = Pick<User, "email">;
+export interface GetLoginMethodsResponse {
+  email: boolean;
+  passkey: boolean;
+}
