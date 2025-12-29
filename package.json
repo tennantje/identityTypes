@@ -32,5 +32,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@simplewebauthn/server": "^13.2.2"
   }
 }

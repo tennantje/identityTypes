@@ -1,3 +1,6 @@
+import { ApiResponse } from './ApiResponse';
+import { User } from './User';
+
 export type RequestLoginCodeRequest = {
   email: string;
 };
@@ -11,6 +14,8 @@ export type VerifyLoginCodeRequest = {
   email: string;
   loginCode: string;
 };
+
+export type VerifyLoginCodeResponse = User;
 
 export type RefreshResponse = {
   message: string;

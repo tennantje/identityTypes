@@ -1,9 +1,16 @@
+import type { 
+  PublicKeyCredentialCreationOptionsJSON,
+  PublicKeyCredentialRequestOptionsJSON,
+  RegistrationResponseJSON,
+  AuthenticationResponseJSON
+} from "@simplewebauthn/server";
+
 export type BeginWebAuthnRegistrationResponse = {
-  registrationOptions: any;
+  registrationOptions: PublicKeyCredentialCreationOptionsJSON;
 };
 
 export type CompleteWebAuthnRegistrationRequest = {
-  registrationResponse: any;
+  registrationResponse: RegistrationResponseJSON;
 };
 
 export type CompleteWebAuthnRegistrationResponse = {
@@ -15,12 +22,12 @@ export type BeginWebAuthnAuthenticationRequest = {
 };
 
 export type BeginWebAuthnAuthenticationResponse = {
-  authenticationOptions: any;
+  authenticationOptions: PublicKeyCredentialRequestOptionsJSON;
 };
 
 export type CompleteWebAuthnAuthenticationRequest = {
   email: string;
-  authenticationResponse: any;
+  authenticationResponse: AuthenticationResponseJSON;
 };
 
 export type CompleteWebAuthnAuthenticationResponse = {
