@@ -1,3 +1,5 @@
+import { ApiResponse } from './ApiResponse';
+
 export type CreateOAuthClientRequest = {
   clientName: string;
   clientType: "CONFIDENTIAL_CLIENT" | "PUBLIC_CLIENT";
@@ -23,22 +25,22 @@ export interface OAuthClient {
   clientLogoUri: string;
 }
 
-export type CreateOAuthClientResponse = OAuthClient;
+export type CreateOAuthClientResponse = ApiResponse<OAuthClient>;
 
 export type GetOAuthClientRequest = {
   clientId: string;
 };
 
-export type GetOAuthClientResponse = OAuthClient;
+export type GetOAuthClientResponse = ApiResponse<OAuthClient>;
 
-export type GetOAuthClientsResponse = {
+export type GetOAuthClientsResponse = ApiResponse<{
   clients: OAuthClient[];
-};
+}>;
 
-export type OAuthAuthorizeResponse = {
+export type OAuthAuthorizeResponse = ApiResponse<{
   success: boolean;
   redirect_uri: string;
-};
+}>;
 
 export type OAuthTokenResponse = {
   access_token?: string;
