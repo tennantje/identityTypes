@@ -1,6 +1,6 @@
 {
   "name": "@tennantje/identity-types",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shared TypeScript types for identity server project",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,7 +13,11 @@
     "clean": "rm -rf dist",
     "prepublishOnly": "npm run clean && npm run build"
   },
-  "keywords": ["typescript", "types", "identity"],
+  "keywords": [
+    "typescript",
+    "types",
+    "identity"
+  ],
   "author": "Jeremy Tennant",
   "license": "MIT",
   "devDependencies": {
