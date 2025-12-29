@@ -1,23 +1,21 @@
-import { ApiResponse } from './ApiResponse';
-
 export type RequestLoginCodeRequest = {
   email: string;
 };
 
-export type RequestLoginCodeResponse = ApiResponse<{
+export type RequestLoginCodeResponse = {
   message: string;
   email: string;
-}>;
+};
 
 export type VerifyLoginCodeRequest = {
   email: string;
   loginCode: string;
 };
 
-export type RefreshResponse = ApiResponse<{
+export type RefreshResponse = {
   message: string;
-}>;
+};
 
-export type LogoutResponse = ApiResponse<{
+export type LogoutResponse = {
   message: string;
-}>;
+};

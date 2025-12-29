@@ -1,5 +1,3 @@
-import { ApiResponse } from './ApiResponse';
-
 export interface User {
   userId: string;
   firstName: string;
@@ -19,9 +17,9 @@ export type RegisterUserRequest = Pick<
   User,
   "firstName" | "lastName" | "email"
 >;
-export type RegisterUserResponse = ApiResponse<User>;
+export type RegisterUserResponse = User;
 export type UpdateUserRequest = Partial<Omit<RegisterUserRequest, "email">>;
-export type UpdateUserResponse = ApiResponse<User>;
+export type UpdateUserResponse = User;
 export type UpdateUserEmailRequest = Pick<User, "unverifiedEmail">;
-export type UpdateUserEmailResponse = ApiResponse<User>;
-export type GetUserResponse = ApiResponse<User>;
+export type UpdateUserEmailResponse = User;
+export type GetUserResponse = User;

@@ -1,33 +1,31 @@
-import { ApiResponse } from './ApiResponse';
-
-export type BeginWebAuthnRegistrationResponse = ApiResponse<{
+export type BeginWebAuthnRegistrationResponse = {
   registrationOptions: any;
-}>;
+};
 
 export type CompleteWebAuthnRegistrationRequest = {
   registrationResponse: any;
 };
 
-export type CompleteWebAuthnRegistrationResponse = ApiResponse<{
+export type CompleteWebAuthnRegistrationResponse = {
   success: boolean;
-}>;
+};
 
 export type BeginWebAuthnAuthenticationRequest = {
   email: string;
 };
 
-export type BeginWebAuthnAuthenticationResponse = ApiResponse<{
+export type BeginWebAuthnAuthenticationResponse = {
   authenticationOptions: any;
-}>;
+};
 
 export type CompleteWebAuthnAuthenticationRequest = {
   email: string;
   authenticationResponse: any;
 };
 
-export type CompleteWebAuthnAuthenticationResponse = ApiResponse<{
+export type CompleteWebAuthnAuthenticationResponse = {
   success: boolean;
-}>;
+};
 
 export interface PasskeySummary {
   credentialId: string;
@@ -37,14 +35,14 @@ export interface PasskeySummary {
   createdAt: string;
 }
 
-export type ListPasskeysResponse = ApiResponse<{
+export type ListPasskeysResponse = {
   passkeys: PasskeySummary[];
-}>;
+};
 
 export type DeletePasskeyRequest = {
   credentialId: string;
 };
 
-export type DeletePasskeyResponse = ApiResponse<{
+export type DeletePasskeyResponse = {
   success: boolean;
-}>;
+};

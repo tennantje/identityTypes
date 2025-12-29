@@ -1,5 +1,3 @@
-import { ApiResponse } from './ApiResponse';
-
 export type ActivateUserRequest = {
   userId: string;
   verificationCode: string;
@@ -10,9 +8,9 @@ export type VerifyEmailChangeRequest = {
   verificationCode: string;
 };
 
-export type GetCurrentUserResponse = ApiResponse<{
+export type GetCurrentUserResponse = {
   userId: string;
   firstName: string;
   lastName: string;
   email: string;
-}>;
+};
