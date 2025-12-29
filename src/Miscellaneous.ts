@@ -1,10 +1,10 @@
 export type ActivateUserRequest = {
-  userId: string;
+  email: string;
   verificationCode: string;
 };
 
 export type VerifyEmailChangeRequest = {
-  userId: string;
+  email: string;
   verificationCode: string;
 };
 
