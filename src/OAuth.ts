@@ -21,10 +21,12 @@ export type CreateOAuthClientRequest = Omit<
 >;
 export type CreateOAuthClientResponse = OAuthClient;
 
-export type UpdateOAuthClientRequest = Omit<
+export type UpdateOAuthClientRequest = {
+  clientId: string;
+} & Partial<Omit<
   OAuthClient,
-  "clientType" | "createdAt" | "createdBy" | "modifiedAt" | "modifiedBy"
->;
+  "clientId" | "clientType" | "createdAt" | "createdBy" | "modifiedAt" | "modifiedBy"
+>>;
 
 export type UpdateOAuthClientResponse = OAuthClient;
 
