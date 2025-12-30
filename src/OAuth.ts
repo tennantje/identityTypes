@@ -17,7 +17,7 @@ export interface OAuthClient {
 
 export type CreateOAuthClientRequest = Omit<
   OAuthClient,
-  "createdAt" | "createdBy" | "modifiedAt" | "modifiedBy"
+  "clientId" | "createdAt" | "createdBy" | "modifiedAt" | "modifiedBy"
 >;
 export type CreateOAuthClientResponse = OAuthClient;
 
