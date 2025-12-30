@@ -40,6 +40,9 @@ export interface PasskeySummary {
   backedUp: boolean;
   transports: string[];
   createdAt: string;
+  displayName: string;
+  detectedDevice: string;
+  userAgent: string;
 }
 
 export type ListPasskeysResponse = {
@@ -51,5 +54,14 @@ export type DeletePasskeyRequest = {
 };
 
 export type DeletePasskeyResponse = {
+  success: boolean;
+};
+
+export type UpdatePasskeyNameRequest = {
+  credentialId: string;
+  displayName: string;
+};
+
+export type UpdatePasskeyNameResponse = {
   success: boolean;
 };
