@@ -1,29 +1,32 @@
-export type CreateOAuthClientRequest = {
-  clientName: string;
-  clientType: "CONFIDENTIAL_CLIENT" | "PUBLIC_CLIENT";
-  redirectUris: string[];
-  scopes: string[];
-  clientDescription: string;
-  clientWebsite: string;
-  clientLogoUri: string;
-};
-
 export interface OAuthClient {
   clientId: string;
   clientName: string;
   clientType: "CONFIDENTIAL_CLIENT" | "PUBLIC_CLIENT";
   scopes: string[];
   redirectUris: string[];
+  clientDescription: string;
+  clientWebsite: string;
+  clientTermsOfService: string;
+  clientPrivacyPolicy: string;
+  clientLogoUri: string;
   createdAt: string;
   createdBy: string;
   modifiedAt: string;
   modifiedBy: string;
-  clientDescription: string;
-  clientWebsite: string;
-  clientLogoUri: string;
 }
 
+export type CreateOAuthClientRequest = Omit<
+  OAuthClient,
+  "createdAt" | "createdBy" | "modifiedAt" | "modifiedBy"
+>;
 export type CreateOAuthClientResponse = OAuthClient;
+
+export type UpdateOAuthClientRequest = Omit<
+  OAuthClient,
+  "clientType" | "createdAt" | "createdBy" | "modifiedAt" | "modifiedBy"
+>;
+
+export type UpdateOAuthClientResponse = OAuthClient;
 
 export type GetOAuthClientRequest = {
   clientId: string;
