@@ -1,6 +1,6 @@
 {
   "name": "@tennantje/identity-types",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "Shared TypeScript types for identity server project",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
