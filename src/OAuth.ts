@@ -19,7 +19,9 @@ export type CreateOAuthClientRequest = Omit<
   OAuthClient,
   "clientId" | "createdAt" | "createdBy" | "modifiedAt" | "modifiedBy"
 >;
-export type CreateOAuthClientResponse = OAuthClient;
+export type CreateOAuthClientResponse = OAuthClient & {
+  clientSecret?: string; // Only present on creation for CONFIDENTIAL_CLIENT
+};
 
 export type UpdateOAuthClientRequest = {
   clientId: string;
@@ -51,4 +53,12 @@ export type OAuthTokenResponse = {
   expires_in?: number;
   refresh_token?: string;
   scope?: string;
+};
+
+export type RegenerateClientSecretRequest = {
+  clientId: string;
+};
+
+export type RegenerateClientSecretResponse = {
+  clientSecret: string;
 };
